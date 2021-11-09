@@ -18,6 +18,9 @@ public interface UserMapper {
 
     //List<MyUsers> findUByUsernameAndPassword(String username,String password);
 
+    @Select("select account=#{account} from usertable where password=#{password}")
+    boolean getExists(@Param("account")String account,@Param("password")String password);
+
 
 }
 
